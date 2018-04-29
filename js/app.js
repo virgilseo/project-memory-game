@@ -86,3 +86,9 @@ deck.addEventListener("click", function (evt) {
     gameTimer();
   };
 });
+
+// Making a function to display the card' s symbol
+function displayCard(evt) {
+  evt.target.classList.toggle("open");
+  evt.target.classList.toggle("show");
+}
