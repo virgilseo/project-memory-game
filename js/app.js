@@ -69,3 +69,20 @@ function start() {
 
 // Start the game on page load
 window.onload = start();
+
+// Add event listener for the cards
+deck.addEventListener("click", function (evt) {
+  if (evt.target.className === "card" && opendCards.length < 2) {
+    displayCard(evt);
+    addToOpenedCards(evt);
+    checkMatch()
+    starRating();
+    addMoves();
+    gameEnd();
+}
+
+  //Starting the timer
+  if (moves === 1) {
+    gameTimer();
+  };
+});
