@@ -92,3 +92,8 @@ function displayCard(evt) {
   evt.target.classList.toggle("open");
   evt.target.classList.toggle("show");
 }
+
+// Adding the clicked card to a array of oppend cards
+function addToOpenedCards(evt) {
+  opendCards.push(evt.target);
+}
