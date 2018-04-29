@@ -97,3 +97,13 @@ function displayCard(evt) {
 function addToOpenedCards(evt) {
   opendCards.push(evt.target);
 }
+
+// Checking if the cards match
+function checkMatch () {
+  if (opendCards.length === 2 && opendCards[0].innerHTML === opendCards[1].innerHTML) {
+      match()
+    };
+  if (opendCards.length === 2 && opendCards[0].innerHTML !== opendCards[1].innerHTML) {
+      unMatch();
+    };
+}
