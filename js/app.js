@@ -10,7 +10,6 @@ let stars = starList.querySelectorAll("li");
 const reloadBtn = document.querySelector(".restart");
 const gameContainer = document.querySelector(".container");
 const modal = document.querySelector(".modal-background");
-const closeModal = document.querySelector(".close-modal");
 let endMoves = document.querySelector(".end-moves");
 let timeEnd = document.querySelector(".time-end");
 let finalRating = document.querySelector(".final-rating");
@@ -163,10 +162,6 @@ function displayModal () {
   endMoves.innerHTML = movesCounter.innerHTML;
   timeEnd.innerHTML = timer.innerHTML;
   finalRating.innerHTML =  starList.innerHTML
-  closeModal.addEventListener("click", function () {
-    start();
-    stopTimer()
-  });
 
   replayBtn.addEventListener("click", function () {
     start();
