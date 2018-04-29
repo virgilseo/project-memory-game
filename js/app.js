@@ -148,3 +148,11 @@ function starRating () {
     starList.children[1].children[0].classList.replace("fa-star", "fa-star-o");
   };
 }
+
+// Ending the game
+function gameEnd () {
+  if (matchedCards.length === 8) {
+    displayModal();
+    stopTimer();
+  };
+}
