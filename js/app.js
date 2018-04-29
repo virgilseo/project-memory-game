@@ -126,3 +126,9 @@ function match() {
   matchedCards.push(opendCards);
   opendCards = [];
 }
+
+// Increment the moves counter and display it on the page
+function addMoves () {
+  moves++
+  movesCounter.innerHTML = moves + " Moves";
+}
