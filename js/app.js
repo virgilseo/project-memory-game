@@ -87,7 +87,7 @@ deck.addEventListener("click", function (evt) {
   };
 });
 
-// Making a function to display the card' s symbol
+// Making a function to display the card's symbol
 function displayCard(evt) {
   evt.target.classList.toggle("open");
   evt.target.classList.toggle("show");
@@ -106,4 +106,13 @@ function checkMatch () {
   if (opendCards.length === 2 && opendCards[0].innerHTML !== opendCards[1].innerHTML) {
       unMatch();
     };
+}
+
+// Action to take when the cards don't match
+function unMatch () {
+  setTimeout (function () {
+    opendCards[0].classList.remove("open", "show");
+    opendCards[1].classList.remove("open", "show");
+    opendCards = [];
+  }, 1200);
 }
