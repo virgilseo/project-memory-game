@@ -40,6 +40,7 @@ function shuffle(array) {
 // Action to take when the game starts
 function start() {
 
+  // Shuffle the cards array
   let cards = shuffle(cardList);
 
   // Reset the move counter
@@ -61,5 +62,10 @@ function start() {
     cards[i].classList.remove("open", "show", "match");
     deck.appendChild(cards[i]);
   }
+
+  //Clear the array of matched cards
   matchedCards.length = 0;
 }
+
+// Start the game on page load
+window.onload = start();
