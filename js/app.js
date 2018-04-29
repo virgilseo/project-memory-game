@@ -138,3 +138,13 @@ reloadBtn.addEventListener("click", function() {
   start();
   stopTimer();
 });
+
+//Change star rating based on the number of moves the user makes
+function starRating () {
+  if (moves > 20) {
+    starList.children[2].children[0].classList.replace("fa-star", "fa-star-o");
+  };
+  if (moves > 40) {
+    starList.children[1].children[0].classList.replace("fa-star", "fa-star-o");
+  };
+}
