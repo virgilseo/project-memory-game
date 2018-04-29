@@ -36,3 +36,30 @@ function shuffle(array) {
 
     return array;
 }
+
+// Action to take when the game starts
+function start() {
+
+  let cards = shuffle(cardList);
+
+  // Reset the move counter
+  moves = 0;
+  movesCounter.innerHTML = moves + " Moves";
+
+  // reseting start rating to initial value
+  starList.children[2].children[0].classList.replace("fa-star-o", "fa-star");
+  starList.children[1].children[0].classList.replace("fa-star-o", "fa-star");
+
+  // Hiding the modal
+  modal.style.display = "none";
+
+  //Reseting the timmer
+  timer.innerHTML = "00:00";
+
+  // Creating the list
+  for (let i = 0; i< cards.length; i++) {
+    cards[i].classList.remove("open", "show", "match");
+    deck.appendChild(cards[i]);
+  }
+  matchedCards.length = 0;
+}
