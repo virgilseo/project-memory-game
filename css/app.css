@@ -96,7 +96,7 @@ h1 {
     background:  linear-gradient(to bottom, rgba(208,228,247,1) 0%,rgba(115,177,231,1) 8%,rgba(10,119,213,1) 53%,rgba(83,159,225,1) 79%,rgba(135,188,234,1) 84%);
     border-radius: 8px;
     padding: 8px;
-    color: white;
+    color: #ffffff;
     display: flex;
     justify-content: space-around;
 }
@@ -138,29 +138,36 @@ h1 {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.8);
+  background-color: #000;
 }
 .modal-content {
-  text-align: center;
   margin:auto;
-  width: 80%;
-  height: 80%;
+  width: 60%;
+  height: 60%;
   border-radius: 8px;
-  border: 1px solid black;
+  border: 1px solid #000;
   background: #ffffff url('../img/geometry2.png');
   padding: 1em;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
 }
 
-.close-modal {
-  float: right;
-  font-size: 3em;
-  font-weight: bold;
-  color: grey;
-}
-
-.close-modal:focus,
-.close-modal:hover {
-  color: black;
+.replay-game {
+  margin-top: 25px;
+  padding: 0.5em;
+  background-color: #02ccba;
+  border-radius: 10px;
+  font-size: 0.7em;
+  color: white;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
   cursor: pointer;
+}
+
+.replay-game:hover{
+  background-color: #ffffff;
+  transition-duration: 0.7s;
+  color: #000;
 }
