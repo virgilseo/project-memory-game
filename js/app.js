@@ -160,7 +160,7 @@ function gameEnd () {
 // Displaying message when the user wins the game
 function displayModal () {
   modal.style.display = "block";
-  endMoves.innerHTML = movesCounter.innerHTML
+  endMoves.innerHTML = movesCounter.innerHTML;
   timeEnd.innerHTML = timer.innerHTML;
   finalRating.innerHTML =  starList.innerHTML
   closeModal.addEventListener("click", function () {
