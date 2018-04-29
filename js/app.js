@@ -167,8 +167,33 @@ function displayModal () {
     start();
     stopTimer()
   });
+
   replayBtn.addEventListener("click", function () {
     start();
     stopTimer();
   });
 }
+
+// Creating a timmer
+function gameTimer() {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+    }
+    timer.textContent = (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+    time();
+}
+
+function time() {
+    clock = setTimeout(gameTimer, 1000);
+}
+
+
+// Stopping the timer when the game ends
+function stopTimer () {
+  timer.innerHTML = "00:00";
+  clearInterval(clock);
+  minutes = 0;
+  seconds = 0;
+};
