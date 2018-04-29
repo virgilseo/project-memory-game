@@ -21,4 +21,8 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  .deck .card {
+    height: 22%;
+  }
 }
