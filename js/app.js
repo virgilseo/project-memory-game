@@ -132,3 +132,9 @@ function addMoves () {
   moves++
   movesCounter.innerHTML = moves + " Moves";
 }
+
+// Add event listener for the reload button
+reloadBtn.addEventListener("click", function() {
+  start();
+  stopTimer();
+});
