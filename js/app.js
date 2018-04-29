@@ -116,3 +116,13 @@ function unMatch () {
     opendCards = [];
   }, 1200);
 }
+
+// Action to take when cards do match
+function match() {
+  opendCards[0].classList.remove("open", "show");
+  opendCards[1].classList.remove("open", "show");
+  opendCards[0].classList.toggle("match");
+  opendCards[1].classList.toggle("match");
+  matchedCards.push(opendCards);
+  opendCards = [];
+}
