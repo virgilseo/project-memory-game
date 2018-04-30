@@ -62,12 +62,11 @@ function start() {
     deck.appendChild(cards[i]);
   }
 
-  //Clear the array of matched cards
+  // Clear the array of matched cards
   matchedCards.length = 0;
 
   // Reset deck css animation
   deck.classList.remove("animated", "tada");
-
 }
 
 // Start the game on page load
@@ -79,7 +78,7 @@ deck.addEventListener("click", function (evt) {
     displayCard(evt);
     addToOpenedCards(evt);
 
-    //Start the move counter
+    // Start the move counter
     if (opendCards.length === 2)  {
       addMoves();
     };
@@ -93,7 +92,6 @@ deck.addEventListener("click", function (evt) {
     starRating();
     gameEnd();
   };
-
 });
 
 // Making a function to display the card's symbol
@@ -112,6 +110,7 @@ function checkMatch () {
   if (opendCards.length === 2 && opendCards[0].innerHTML === opendCards[1].innerHTML) {
       match();
     };
+
   if (opendCards.length === 2 && opendCards[0].innerHTML !== opendCards[1].innerHTML) {
       unMatch();
     };
@@ -121,7 +120,9 @@ function checkMatch () {
 function unMatch () {
   setTimeout (function () {
     opendCards[0].classList.remove("open", "show");
+
     opendCards[1].classList.remove("open", "show");
+
     opendCards = [];
   }, 1200);
 }
@@ -129,10 +130,15 @@ function unMatch () {
 // Action to take when cards do match
 function match() {
   opendCards[0].classList.remove("open", "show");
+
   opendCards[1].classList.remove("open", "show",);
+
   opendCards[0].classList.toggle("match");
+
   opendCards[1].classList.toggle("match");
+
   matchedCards.push(opendCards);
+
   opendCards = [];
 }
 
@@ -145,7 +151,9 @@ function addMoves () {
 // Add event listener for the reload button
 reloadBtn.addEventListener("click", function() {
   stopTimer();
+
   opendCards = [];
+
   start();
 });
 
@@ -154,6 +162,7 @@ function starRating () {
   if (moves > 20) {
     starList.children[2].children[0].classList.replace("fa-star", "fa-star-o");
   };
+
   if (moves > 40) {
     starList.children[1].children[0].classList.replace("fa-star", "fa-star-o");
   };
@@ -161,7 +170,7 @@ function starRating () {
 
 // Ending the game
 function gameEnd () {
-  if (matchedCards.length === 1) {
+  if (matchedCards.length === 8) {
 
     stopTimer();
 
@@ -169,6 +178,7 @@ function gameEnd () {
 
     setTimeout (function(){
       displayModal();
+
     }, 3000);
   };
 }
@@ -176,12 +186,17 @@ function gameEnd () {
 // Displaying message when the user wins the game
 function displayModal () {
   modal.style.display = "block";
+
   endMoves.innerHTML = movesCounter.innerHTML;
+
   timeEnd.innerHTML = timer.innerHTML;
+
   finalRating.innerHTML =  starList.innerHTML
 
   replayBtn.addEventListener("click", function () {
+
     stopTimer();
+
     start();
   });
 }
@@ -189,11 +204,14 @@ function displayModal () {
 // Creating a timmer
 function gameTimer() {
     seconds++;
+
     if (seconds >= 60) {
         seconds = 0;
         minutes++;
     }
+
     timer.textContent = (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+
     time();
 }
 
@@ -201,10 +219,11 @@ function time() {
     clock = setTimeout(gameTimer, 1000);
 }
 
-
 // Stopping the timer when the game ends
 function stopTimer () {
   clearInterval(clock);
+
   minutes = 0;
+
   seconds = 0;
 }
