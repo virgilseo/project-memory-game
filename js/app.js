@@ -81,6 +81,11 @@ deck.addEventListener("click", function (evt) {
       addMoves();
     };
 
+    // Start the timer
+    if (minutes === 0 && seconds === 0) {
+      gameTimer();
+    };
+
     checkMatch()
     starRating();
     gameEnd();
