@@ -31,13 +31,13 @@ Flip over two hidden cards at a time to locate the ones that match!
 
 ## Installation
 
-Clone the current repository using: git clone (https://github.com/virgilseo/project-memory-game.git).
+Clone the current repository using: git clone https://github.com/virgilseo/project-memory-game.git.
 
 Open the index.html file in your browser and start playing the game.
 
 It is highly recommended to use Chrome as your go to browser.
 
-##Libraries
+## Libraries
 
 Animate.css - [Just-Add-Water-Css-Animations](https://github.com/daneden/animate.css).
 
@@ -51,4 +51,4 @@ For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
-This project is licensed under the Creative [Commons Attribution 3.0 Unported License.](#https://creativecommons.org/licenses/by/3.0/)
+This project is licensed under the Creative [Commons Attribution 3.0 Unported License.](https://creativecommons.org/licenses/by/3.0/)
