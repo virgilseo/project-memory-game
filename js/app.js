@@ -65,6 +65,9 @@ function start() {
   //Clear the array of matched cards
   matchedCards.length = 0;
 
+  // Reset deck css animation
+  deck.classList.remove("animated", "tada");
+
 }
 
 // Start the game on page load
@@ -126,7 +129,7 @@ function unMatch () {
 // Action to take when cards do match
 function match() {
   opendCards[0].classList.remove("open", "show");
-  opendCards[1].classList.remove("open", "show");
+  opendCards[1].classList.remove("open", "show",);
   opendCards[0].classList.toggle("match");
   opendCards[1].classList.toggle("match");
   matchedCards.push(opendCards);
@@ -141,8 +144,8 @@ function addMoves () {
 
 // Add event listener for the reload button
 reloadBtn.addEventListener("click", function() {
-  start();
   stopTimer();
+  start();
 });
 
 //Change star rating based on the number of moves the user makes
@@ -158,8 +161,14 @@ function starRating () {
 // Ending the game
 function gameEnd () {
   if (matchedCards.length === 1) {
-    displayModal();
+
     stopTimer();
+
+    deck.classList.add("animated", "tada");
+
+    setTimeout (function(){
+      displayModal();
+    }, 3000);
   };
 }
 
@@ -194,7 +203,6 @@ function time() {
 
 // Stopping the timer when the game ends
 function stopTimer () {
-  timer.innerHTML = "00:00";
   clearInterval(clock);
   minutes = 0;
   seconds = 0;
